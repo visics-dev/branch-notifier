@@ -1,0 +1,63 @@
+{
+  "name": "branch-notifier",
+  "displayName": "Branch Notifier",
+  "description": "Warns users when they're not on the main branch",
+  "version": "1.0.0",
+  "publisher": "visics",
+  "icon": "img/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visics-dev/branch-notifier"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "branch-notifier.checkBranch",
+        "title": "Check Current Branch"
+      }
+    ],
+    "configuration": {
+      "title": "Branch Notifier",
+      "properties": {
+        "BranchNotifier.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable periodic branch checking",
+          "order": 1
+        },
+        "BranchNotifier.checkInterval": {
+          "type": "string",
+          "default": "1min",
+          "enum": ["30sec", "1min", "5min"],
+          "enumDescriptions": [
+            "Check every 30 seconds",
+            "Check every 1 minute",
+            "Check every 5 minutes"
+          ],
+          "description": "Interval for periodic branch checking",
+          "order": 2
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  }
+}
