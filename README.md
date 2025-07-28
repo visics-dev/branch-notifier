@@ -28,5 +28,5 @@ A VS Code extension that warns users when they're not on the main branch of thei
 
 This extension contributes the following settings:
 
-* `mainBranchNotifier.enabled`: Enable periodic branch checking (default: false)
-* `mainBranchNotifier.checkInterval`: Interval for periodic checking - 30sec, 1min, or 5min (default: 1min)
+* `BranchNotifier.enabled`: Enable periodic branch checking (default: false)
+* `BranchNotifier.checkInterval`: Interval for periodic checking - 30sec, 1min, or 5min (default: 1min)
